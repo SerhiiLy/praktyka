@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table border="1">
+   <tr>
+    <th>номер рейсу;</th>
+    <th>час відправлення;</th>
+    <th>дні тижня</th>
+    <th>кількість вільних місць</th>
+    <th>маршрут</th>
+   </tr>
+    {% for schedule in schedules %}
+       <tr>
+           <td> {{schedule.flight_number}} </td>
+           <td>{{schedule.departure_time}}</td>
+           <td>{{schedule.days_week}}</td>
+           <td>{{schedule.number_seats}}</td>
+           <td>{{schedule.route}}</td>
+       </tr>
+    {% endfor %}
+  </table>
+
+
+
+
+{% endblock %}
